@@ -11,7 +11,7 @@ This application consists of two services:
 
 ## Architecture
 
-```
+```text
 ┌─────────────┐
 │   Worker    │──► Fetches data every 60s
 │  (Python)   │    from external APIs
@@ -146,23 +146,26 @@ CREATE TABLE IF NOT EXISTS data (
 To run locally without Docker:
 
 1. Install dependencies:
-```bash
-pip install -r facts/app/requirements.txt
-pip install -r worker/app/requirements.txt
-```
+
+   ```bash
+   pip install -r facts/app/requirements.txt
+   pip install -r worker/app/requirements.txt
+   ```
 
 2. Set environment variables for database connection
 
 3. Run the worker:
-```bash
-python worker/app/worker.py
-```
+
+   ```bash
+   python worker/app/worker.py
+   ```
 
 4. Run the facts frontend:
-```bash
-cd facts/app
-flask run
-```
+
+   ```bash
+   cd facts/app
+   flask run
+   ```
 
 ## License
 
