@@ -129,7 +129,7 @@ spec:
           done
           echo "MySQL is ready!"
       containers:
-      - image: regisftm/worker:v1.0.1
+      - image: public.ecr.aws/f3z6x2r3/catfacts/worker
         name: worker
         env:
         - name: DB_HOST
@@ -193,7 +193,7 @@ spec:
           done
           echo "MySQL is ready!"
       containers:
-      - image: regisftm/facts:v1.0.1
+      - image: public.ecr.aws/f3z6x2r3/catfacts/facts:latest
         name: facts
         env:
         - name: DB_HOST
