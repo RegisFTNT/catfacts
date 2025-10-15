@@ -147,9 +147,9 @@ spec:
         livenessProbe:
           exec:
             command:
-            - python
+            - /bin/sh
             - -c
-            - "import mysql.connector; mysql.connector.connect(host='db', user='user', password='$(DB_PASSWORD)', database='db')"
+            - "python -c \"import mysql.connector; mysql.connector.connect(host='db', user='user', password='$DB_PASSWORD', database='db')\""
           initialDelaySeconds: 30
           periodSeconds: 30
           timeoutSeconds: 10
