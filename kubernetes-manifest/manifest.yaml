@@ -31,7 +31,7 @@ spec:
         app: db
     spec:
       containers:
-      - image: mysql:8.2.0
+      - image: public.ecr.aws/f3z6x2r3/catfacts/mysql:latest
         name: mysql
         env:
         - name: MYSQL_RANDOM_ROOT_PASSWORD
@@ -118,7 +118,7 @@ spec:
     spec:
       initContainers:
       - name: wait-for-db
-        image: busybox:1.36
+        image: public.ecr.aws/f3z6x2r3/catfacts/busybox:latest
         command:
         - sh
         - -c
@@ -129,7 +129,7 @@ spec:
           done
           echo "MySQL is ready!"
       containers:
-      - image: public.ecr.aws/f3z6x2r3/catfacts/worker
+      - image: public.ecr.aws/f3z6x2r3/catfacts/worker:latest
         name: worker
         env:
         - name: DB_HOST
@@ -182,7 +182,7 @@ spec:
     spec:
       initContainers:
       - name: wait-for-db
-        image: busybox:1.36
+        image: public.ecr.aws/f3z6x2r3/catfacts/busybox:latest
         command:
         - sh
         - -c
